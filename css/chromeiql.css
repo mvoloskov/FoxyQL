@@ -19,8 +19,20 @@ body,
   position: absolute;
   text-align: center;
   margin-top: 5px;
-  left: 50%;
+  left: 630px;
   margin-left: -300px;
+}
+
+@media (max-width: 1200px) {
+  #url-bar {
+    width: 300px;
+  }
+}
+
+@media (max-width: 700px) {
+  #url-bar {
+    display: none;
+  }
 }
 
 #url-box, #url-save-button {

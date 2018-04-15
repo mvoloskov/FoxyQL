@@ -131,9 +131,9 @@ class ChromeiQL extends React.Component {
 }
 
 chrome.storage.local.get("chromeiqlEndpoint", (storage) =>
-  // Render <GraphiQL /> into the body.
+  // Render <GraphiQL /> into the container.
   ReactDOM.render(
     <ChromeiQL endpoint={storage.chromeiqlEndpoint} />,
-    document.body
+    document.getElementById('react-container')
   )
 );

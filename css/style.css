@@ -17,10 +17,9 @@ body,
 #url-bar {
     width: 600px;
     position: absolute;
-    text-align: center;
-    margin-top: 5px;
-    left: 770px;
-    margin-left: -300px;
+    top: 5px;
+    left: 470px;
+    height: 40px; /* Avoid vertical scrollbars */
 }
 
 @media (max-width: 1200px) {
@@ -54,4 +53,10 @@ body,
 
 #url-save-button {
     padding: 6px 12px;
+}
+
+#no-endpoint {
+    margin: 4em auto;
+    text-align: center;
+    font-size: 16px;
 }

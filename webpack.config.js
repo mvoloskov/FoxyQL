@@ -2,10 +2,10 @@ const path = require('path');
 
 const config = {
     mode: 'production',
-    entry: './js/chromeiql.jsx',
+    entry: './js/index.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'chromeiql.js',
+        filename: 'index.js',
     },
     optimization: {
         // Disable UglifyJsPlugin because we don't care about bundle size and otherwise

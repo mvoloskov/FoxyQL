@@ -4,7 +4,7 @@ import GraphiQL from 'graphiql';
 import 'graphiql/graphiql.css';
 
 // Buffer for endpoint entry value
-let chromeiqlEndpoint;
+let endpoint;
 
 // Parse the search string to get url parameters.
 const search = window.location.search;
@@ -60,7 +60,7 @@ function graphQLFetcher(endpoint) {
     }
 }
 
-class ChromeiQL extends React.Component {
+class GraphiQLExtension extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -84,6 +84,9 @@ class ChromeiQL extends React.Component {
                     variables={parameters.variables}
                     onEditQuery={onEditQuery}
                     onEditVariables={onEditVariables}/>;
+        } else {
+            graphqlConsole =
+                <p id="no-endpoint">Set a non empty endpoint above</p>;
         }
 
         // If we have changed endpoints just now...
@@ -111,12 +114,12 @@ class ChromeiQL extends React.Component {
     }
 
     setEndpoint() {
-        const newEndpoint = chromeiqlEndpoint;
+        const newEndpoint = endpoint;
         const setState = this.setState.bind(this);
         const currState = this.state;
 
         chrome.storage.local.set(
-            {'chromeiqlEndpoint': newEndpoint},
+            {'endpoint': newEndpoint},
             () => {
                 if (!chrome.runtime.lastError) {
                     // Move current endpoint to previous, and set current endpoint to new.
@@ -130,14 +133,14 @@ class ChromeiQL extends React.Component {
     }
 
     updateEndpoint(e) {
-        chromeiqlEndpoint = e.target.value;
+        endpoint = e.target.value;
     }
 }
 
-chrome.storage.local.get('chromeiqlEndpoint', (storage) =>
+chrome.storage.local.get('endpoint', (storage) =>
     // Render <GraphiQL /> into the container.
     ReactDOM.render(
-        <ChromeiQL endpoint={storage.chromeiqlEndpoint}/>,
+        <GraphiQLExtension endpoint={storage.endpoint}/>,
         document.getElementById('react-container'),
     ),
 );

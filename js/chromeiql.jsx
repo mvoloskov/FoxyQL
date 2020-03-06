@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import GraphiQL from 'graphiql';
-import _ from 'lodash';
-import $ from 'jquery';
 
 // Buffer for endpoint entry value
 let chromeiqlEndpoint;
@@ -90,7 +88,12 @@ class ChromeiQL extends React.Component {
     // If we have changed endpoints just now...
     if (this.state.currEndpoint !== this.state.prevEndpoint) {
       // then we shall re-execute the query after render
-      setTimeout(() => $('button.execute-button').click(), 500);
+      setTimeout(() => {
+        const buttons = document.getElementsByClassName('execute-button');
+        for (const button of buttons) {//
+          button.click()
+        }
+      }, 500);
     }
 
     return (

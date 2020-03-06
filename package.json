@@ -5,6 +5,7 @@
   "main": "js/index.js",
   "scripts": {
     "build": "webpack",
+    "dev": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,8 +26,6 @@
   "dependencies": {
     "graphiql": "^0.11.3",
     "graphql": "^0.10.5",
-    "jquery": "^3.2.1",
-    "lodash": "^4.17.4",
     "react": "^15.5.0",
     "react-dom": "^15.5.0"
   },

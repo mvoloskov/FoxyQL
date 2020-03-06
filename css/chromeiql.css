@@ -1,57 +1,57 @@
 html,
 body,
 #react-container {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 #application {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  width: 100%;
-  display: flex;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
 }
 
 #url-bar {
-  width: 600px;
-  position: absolute;
-  text-align: center;
-  margin-top: 5px;
-  left: 630px;
-  margin-left: -300px;
+    width: 600px;
+    position: absolute;
+    text-align: center;
+    margin-top: 5px;
+    left: 630px;
+    margin-left: -300px;
 }
 
 @media (max-width: 1200px) {
-  #url-bar {
-    width: 300px;
-  }
+    #url-bar {
+        width: 300px;
+    }
 }
 
 @media (max-width: 700px) {
-  #url-bar {
-    display: none;
-  }
+    #url-bar {
+        display: none;
+    }
 }
 
 #url-box, #url-save-button {
-  height: 30px;
-  box-sizing: border-box;
-  margin: 3px auto;
+    height: 30px;
+    box-sizing: border-box;
+    margin: 3px auto;
 }
 
 #url-box {
-  width: 500px;
-  margin-right: 2px;
-  border-radius: 4px;
-  margin-right: 2px;
-  padding: 0 4px;
-  border: 1px none;
-  border-style: inset;
-  color: #555;
+    width: 500px;
+    margin-right: 2px;
+    border-radius: 4px;
+    margin-right: 2px;
+    padding: 0 4px;
+    border: 1px none;
+    border-style: inset;
+    color: #555;
 }
 
 #url-save-button {
-  padding: 6px 12px;
+    padding: 6px 12px;
 }

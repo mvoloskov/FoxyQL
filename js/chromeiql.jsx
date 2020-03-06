@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import GraphiQL from 'graphiql';
+import 'graphiql/graphiql.css';
 
 // Buffer for endpoint entry value
 let chromeiqlEndpoint;

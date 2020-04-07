@@ -68,12 +68,13 @@ class GraphiQLExtension extends React.Component {
             currEndpoint: this.props.endpoint,
         };
 
-        this.setEndpoint = this.setEndpoint.bind(this)
-        this.updateEndpoint = this.updateEndpoint.bind(this)
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.setEndpoint = this.setEndpoint.bind(this);
+        this.updateEndpoint = this.updateEndpoint.bind(this);
     }
 
     render() {
-        const endpoint = this.state.currEndpoint
+        const endpoint = this.state.currEndpoint;
         let graphqlConsole = null;
         if (endpoint) {
             graphqlConsole =
@@ -103,7 +104,11 @@ class GraphiQLExtension extends React.Component {
         return (
             <div id="application">
                 <div id="url-bar" className="graphiql-container">
-                    <input type="text" id="url-box" defaultValue={endpoint} onChange={this.updateEndpoint}/>
+                    <input type="text"
+                           id="url-box"
+                           defaultValue={endpoint}
+                           onChange={this.updateEndpoint}
+                           onKeyDown={this.handleKeyDown}/>
                     <a id="url-save-button" className="toolbar-button" onClick={this.setEndpoint}>
                         Set endpoint
                     </a>
@@ -111,6 +116,13 @@ class GraphiQLExtension extends React.Component {
                 {graphqlConsole}
             </div>
         );
+    }
+
+    handleKeyDown(e) {
+        if (e.key === 'Enter') {
+            this.updateEndpoint(e);
+            this.setEndpoint();
+        }
     }
 
     setEndpoint() {

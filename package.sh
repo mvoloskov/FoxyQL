@@ -1,0 +1,1 @@
+zip -r graphql-extension.zip css dist js public index.html manifest.json

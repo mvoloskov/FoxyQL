@@ -1,6 +1,5 @@
 {
     "name": "graphiql-extension",
-    "version": "1.0.0",
     "description": "Thin multi-endpoint wrapper for GraphiQL as a Chrome extension",
     "main": "js/index.js",
     "scripts": {

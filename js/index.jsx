@@ -90,17 +90,6 @@ class GraphiQLExtension extends React.Component {
                 <p id="no-endpoint">Set a non empty endpoint above</p>;
         }
 
-        // If we have changed endpoints just now...
-        if (this.state.currEndpoint !== this.state.prevEndpoint) {
-            // then we shall re-execute the query after render
-            setTimeout(() => {
-                const buttons = document.getElementsByClassName('execute-button');
-                for (const button of buttons) {//
-                    button.click()
-                }
-            }, 500);
-        }
-
         return (
             <div id="application">
                 <div id="url-bar" className="graphiql-container">
@@ -130,6 +119,17 @@ class GraphiQLExtension extends React.Component {
         const setState = this.setState.bind(this);
         const currState = this.state;
 
+        // If we have changed endpoints just now...
+        if (endpoint !== currState.currEndpoint) {
+            // then we shall re-execute the query after render
+            setTimeout(() => {
+                const buttons = document.getElementsByClassName('execute-button');
+                for (const button of buttons) {//
+                    button.click()
+                }
+            }, 500);
+        }
+        
         chrome.storage.local.set(
             {'endpoint': newEndpoint},
             () => {

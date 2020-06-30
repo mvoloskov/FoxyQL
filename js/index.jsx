@@ -119,17 +119,6 @@ class GraphiQLExtension extends React.Component {
         const setState = this.setState.bind(this);
         const currState = this.state;
 
-        // If we have changed endpoints just now...
-        if (endpoint !== currState.currEndpoint) {
-            // then we shall re-execute the query after render
-            setTimeout(() => {
-                const buttons = document.getElementsByClassName('execute-button');
-                for (const button of buttons) {//
-                    button.click()
-                }
-            }, 500);
-        }
-        
         chrome.storage.local.set(
             {'endpoint': newEndpoint},
             () => {

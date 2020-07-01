@@ -34,7 +34,7 @@ body,
     }
 }
 
-#url-box, #url-save-button {
+#url-box {
     height: 30px;
     box-sizing: border-box;
     margin: 3px auto;
@@ -44,19 +44,19 @@ body,
     width: 500px;
     margin-right: 2px;
     border-radius: 4px;
-    margin-right: 2px;
     padding: 0 4px;
-    border: 1px none;
-    border-style: inset;
+    border: 1px inset;
     color: #555;
-}
-
-#url-save-button {
-    padding: 6px 12px;
 }
 
 #no-endpoint {
     margin: 4em auto;
     text-align: center;
     font-size: 16px;
+}
+
+#typing {
+    white-space: nowrap;
+    align-self: center;
+    color: gray;
 }

@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "GraphiQL extension",
-    "version": "1.1",
+    "version": "1.2",
     "description": "Chrome extension for the GraphiQL tool",
     "background": {
         "scripts": [

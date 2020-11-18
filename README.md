@@ -10,6 +10,6 @@ This project is a fork of the seemingly unmaintained https://github.com/ermanc/C
 It aims to stay simple feature-wise and be the thinnest wrapper around GraphiQL as possible.
 ```
 
-# Uyouthe's part
+# mvoloskov's part
 
 This repo is a fork of @PowerKiKi 's fork of ChromeiQL but this is a Firefox extension.
